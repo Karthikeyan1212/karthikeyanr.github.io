@@ -2,48 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karthikeyan R | Data Scientist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --bg-dark: #1e1e1e;
+            --bg-card: #2a2a2a;
+            --accent: #0a66c2;
+            --text-main: #e6e6e6;
+            --text-muted: #b0b0b0;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            background: #f4f6f8;
-            color: #333;
+            padding: 0;
         }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
         header {
-            background: #0a66c2;
-            color: white;
-            padding: 40px;
             text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(135deg, #1e1e1e, #252525);
+            border-bottom: 1px solid #333;
         }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
         section {
-            padding: 40px;
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            margin-bottom: 20px;
-            border-radius: 8px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
         }
+
         h2 {
-            color: #0a66c2;
-        }
-        ul {
-            line-height: 1.8;
-        }
-        .projects div {
+            color: var(--accent);
             margin-bottom: 20px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
         }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .projects .project {
+            margin-bottom: 25px;
+        }
+
+        .project h3 {
+            margin-bottom: 8px;
+        }
+
+        .tags {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            background: #222;
-            color: white;
+            padding: 25px;
+            color: var(--text-muted);
+            border-top: 1px solid #333;
+            margin-top: 50px;
         }
-        a {
-            color: #0a66c2;
-            text-decoration: none;
-            font-weight: bold;
+
+        .contact p {
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -52,74 +114,75 @@
 <header>
     <h1>Karthikeyan R</h1>
     <h3>Data Scientist | 4+ Years Experience</h3>
-    <p>Machine Learning • Data Analytics • Python • SQL</p>
+    <p>Machine Learning • Data Analytics • Python • SQL • Business Insights</p>
 </header>
 
 <section>
     <h2>About Me</h2>
     <p>
-        I am a results-driven Data Scientist with 4 years of professional experience in building
-        data-driven solutions, predictive models, and analytical insights. I specialize in transforming
-        raw data into meaningful business intelligence and scalable machine learning solutions.
+        I am a Data Scientist with 4 years of industry experience delivering data-driven solutions,
+        predictive models, and actionable insights. I specialize in translating complex datasets
+        into business value through analytics, machine learning, and clear storytelling.
     </p>
 </section>
 
 <section>
-    <h2>Skills</h2>
+    <h2>Core Skills</h2>
     <ul>
         <li><strong>Programming:</strong> Python, SQL</li>
         <li><strong>Machine Learning:</strong> Regression, Classification, Clustering, NLP</li>
-        <li><strong>Data Analysis:</strong> Pandas, NumPy, Exploratory Data Analysis</li>
-        <li><strong>Visualization:</strong> Matplotlib, Seaborn, Power BI</li>
+        <li><strong>Data Analysis:</strong> EDA, Feature Engineering, Statistical Analysis</li>
+        <li><strong>Visualization:</strong> Power BI, Matplotlib, Seaborn</li>
         <li><strong>Tools:</strong> Git, Jupyter Notebook</li>
         <li><strong>Cloud:</strong> AWS (Basic)</li>
     </ul>
 </section>
 
 <section class="projects">
-    <h2>Projects</h2>
+    <h2>Selected Projects</h2>
 
-    <div>
+    <div class="project">
         <h3>Customer Churn Prediction</h3>
         <p>
-            Built a machine learning model to predict customer churn using historical data.
-            Improved retention strategy through actionable insights.
+            Built and evaluated machine learning models to identify high-risk customers and
+            support proactive retention strategies.
         </p>
-        <p><strong>Tech:</strong> Python, Scikit-learn, Pandas</p>
+        <p class="tags">Python • Scikit-learn • Pandas</p>
     </div>
 
-    <div>
-        <h3>Sales Forecasting Model</h3>
+    <div class="project">
+        <h3>Sales Forecasting & Demand Planning</h3>
         <p>
-            Developed a time-series forecasting solution to predict monthly sales trends.
-            Enabled better inventory and demand planning.
+            Developed time-series forecasting models to predict monthly sales trends,
+            improving inventory and planning accuracy.
         </p>
-        <p><strong>Tech:</strong> Python, ARIMA, Matplotlib</p>
+        <p class="tags">ARIMA • Time Series • Python</p>
     </div>
 
-    <div>
-        <h3>Data Dashboard & Reporting</h3>
+    <div class="project">
+        <h3>Executive Data Dashboard</h3>
         <p>
-            Designed interactive dashboards to visualize KPIs and business performance.
+            Designed interactive dashboards to track KPIs and provide leadership with
+            real-time business insights.
         </p>
-        <p><strong>Tech:</strong> Power BI, SQL</p>
+        <p class="tags">Power BI • SQL • Data Modeling</p>
     </div>
 </section>
 
 <section>
-    <h2>Experience</h2>
+    <h2>Professional Experience</h2>
     <p><strong>Data Scientist</strong> — 4 Years</p>
     <ul>
-        <li>Built and deployed ML models for real-world business problems</li>
-        <li>Collaborated with stakeholders to define data-driven strategies</li>
-        <li>Performed advanced data analysis and visualization</li>
+        <li>Designed and deployed ML models for production use</li>
+        <li>Partnered with business stakeholders to define analytical solutions</li>
+        <li>Delivered insights influencing strategic and operational decisions</li>
     </ul>
 </section>
 
-<section>
-    <h2>Contact</h2>
+<section class="contact">
+    <h2>Contact & Profiles</h2>
     <p>Email: <strong>your.email@example.com</strong></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com">linkedin.com/in/karthikeyanr</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com">Add your LinkedIn URL here</a></p>
     <p>GitHub: <a href="https://github.com">github.com/karthikeyanr</a></p>
 </section>
 
