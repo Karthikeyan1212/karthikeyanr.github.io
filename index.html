@@ -29,19 +29,27 @@
 
         header {
             text-align: center;
-            padding: 70px 20px;
-            background: linear-gradient(135deg, #1e1e1e, #252525);
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1e1e1e, #262626);
             border-bottom: 1px solid #333;
+        }
+
+        header img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid var(--accent);
         }
 
         header h1 {
             font-size: 3rem;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         header h3 {
             color: var(--accent);
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             font-weight: 500;
         }
 
@@ -50,18 +58,25 @@
             font-size: 1.1rem;
         }
 
+        .banner {
+            width: 100%;
+            max-height: 280px;
+            object-fit: cover;
+            border-bottom: 1px solid #333;
+        }
+
         section {
             max-width: 1000px;
             margin: 40px auto;
-            padding: 30px;
+            padding: 32px;
             background: var(--bg-card);
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            box-shadow: 0 0 25px rgba(0,0,0,0.35);
         }
 
         h2 {
             color: var(--accent);
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             border-bottom: 1px solid #444;
             padding-bottom: 10px;
         }
@@ -74,8 +89,22 @@
             margin-bottom: 10px;
         }
 
-        .projects .project {
-            margin-bottom: 25px;
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 12px;
         }
 
         .project h3 {
@@ -90,6 +119,7 @@
         a {
             color: var(--accent);
             text-decoration: none;
+            font-weight: 500;
         }
 
         a:hover {
@@ -98,31 +128,40 @@
 
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 26px;
             color: var(--text-muted);
             border-top: 1px solid #333;
-            margin-top: 50px;
+            margin-top: 60px;
         }
 
         .contact p {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
     </style>
 </head>
 <body>
 
 <header>
+    <!-- Profile Image -->
+    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Profile Image">
+
     <h1>Karthikeyan R</h1>
     <h3>Data Scientist | 4+ Years Experience</h3>
     <p>Machine Learning • Data Analytics • Python • SQL • Business Insights</p>
 </header>
 
+<!-- Data Science Banner -->
+<img class="banner"
+     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+     alt="Data Science Banner">
+
 <section>
     <h2>About Me</h2>
     <p>
-        I am a Data Scientist with 4 years of industry experience delivering data-driven solutions,
-        predictive models, and actionable insights. I specialize in translating complex datasets
-        into business value through analytics, machine learning, and clear storytelling.
+        I am a Data Scientist with 4 years of professional experience in developing data-driven
+        solutions, predictive models, and analytical insights. I specialize in transforming complex
+        datasets into measurable business impact through machine learning, statistical analysis,
+        and stakeholder collaboration.
     </p>
 </section>
 
@@ -131,41 +170,45 @@
     <ul>
         <li><strong>Programming:</strong> Python, SQL</li>
         <li><strong>Machine Learning:</strong> Regression, Classification, Clustering, NLP</li>
-        <li><strong>Data Analysis:</strong> EDA, Feature Engineering, Statistical Analysis</li>
+        <li><strong>Data Analysis:</strong> EDA, Feature Engineering, Statistical Modeling</li>
         <li><strong>Visualization:</strong> Power BI, Matplotlib, Seaborn</li>
         <li><strong>Tools:</strong> Git, Jupyter Notebook</li>
         <li><strong>Cloud:</strong> AWS (Basic)</li>
     </ul>
 </section>
 
-<section class="projects">
+<section>
     <h2>Selected Projects</h2>
 
-    <div class="project">
-        <h3>Customer Churn Prediction</h3>
-        <p>
-            Built and evaluated machine learning models to identify high-risk customers and
-            support proactive retention strategies.
-        </p>
-        <p class="tags">Python • Scikit-learn • Pandas</p>
-    </div>
+    <div class="projects">
 
-    <div class="project">
-        <h3>Sales Forecasting & Demand Planning</h3>
-        <p>
-            Developed time-series forecasting models to predict monthly sales trends,
-            improving inventory and planning accuracy.
-        </p>
-        <p class="tags">ARIMA • Time Series • Python</p>
-    </div>
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4" alt="Churn Prediction">
+            <h3>Customer Churn Prediction</h3>
+            <p>
+                Built ML models to identify churn-prone customers and key retention drivers.
+            </p>
+            <p class="tags">Python • Scikit-learn • Pandas</p>
+        </div>
 
-    <div class="project">
-        <h3>Executive Data Dashboard</h3>
-        <p>
-            Designed interactive dashboards to track KPIs and provide leadership with
-            real-time business insights.
-        </p>
-        <p class="tags">Power BI • SQL • Data Modeling</p>
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4" alt="Sales Forecasting">
+            <h3>Sales Forecasting & Demand Planning</h3>
+            <p>
+                Developed time-series forecasting models to improve sales predictions.
+            </p>
+            <p class="tags">ARIMA • Time Series • Python</p>
+        </div>
+
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df" alt="Dashboard">
+            <h3>Executive Business Dashboard</h3>
+            <p>
+                Designed interactive dashboards for KPI monitoring and decision-making.
+            </p>
+            <p class="tags">Power BI • SQL • Data Modeling</p>
+        </div>
+
     </div>
 </section>
 
@@ -174,16 +217,26 @@
     <p><strong>Data Scientist</strong> — 4 Years</p>
     <ul>
         <li>Designed and deployed ML models for production use</li>
-        <li>Partnered with business stakeholders to define analytical solutions</li>
-        <li>Delivered insights influencing strategic and operational decisions</li>
+        <li>Worked closely with business stakeholders</li>
+        <li>Delivered insights driving strategic decisions</li>
     </ul>
 </section>
 
 <section class="contact">
     <h2>Contact & Profiles</h2>
     <p>Email: <strong>your.email@example.com</strong></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com">Add your LinkedIn URL here</a></p>
-    <p>GitHub: <a href="https://github.com">github.com/karthikeyanr</a></p>
+    <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/karthikeyan-r-614b9a233" target="_blank">
+            linkedin.com/in/karthikeyan-r
+        </a>
+    </p>
+    <p>
+        GitHub:
+        <a href="https://github.com/karthikeyanr" target="_blank">
+            github.com/karthikeyanr
+        </a>
+    </p>
 </section>
 
 <footer>
