@@ -1,247 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Karthikeyan R | Data Scientist</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Karthikeyan R | Data Scientist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root {
-            --bg-dark: #1e1e1e;
-            --bg-card: #2a2a2a;
-            --accent: #0a66c2;
-            --text-main: #e6e6e6;
-            --text-muted: #b0b0b0;
-        }
+  <style>
+    :root {
+      --bg-main: #0f1115;
+      --bg-section: #181b22;
+      --bg-card: #1f2330;
+      --accent: #4da3ff;
+      --text-main: #eaeaf0;
+      --text-muted: #b5b8c5;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.7;
-        }
+    body {
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
 
-        header {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #1e1e1e, #262626);
-            border-bottom: 1px solid #333;
-        }
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: radial-gradient(circle at top, #1c2130, #0f1115);
+    }
 
-        header img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 3px solid var(--accent);
-        }
+    .hero img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      margin-bottom: 25px;
+    }
 
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 12px;
-        }
+    .hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 10px;
+    }
 
-        header h3 {
-            color: var(--accent);
-            margin-bottom: 16px;
-            font-weight: 500;
-        }
+    .hero h3 {
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
 
-        header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
 
-        .banner {
-            width: 100%;
-            max-height: 280px;
-            object-fit: cover;
-            border-bottom: 1px solid #333;
-        }
+    .hero a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 26px;
+      background: var(--accent);
+      color: #000;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+    }
 
-        section {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 32px;
-            background: var(--bg-card);
-            border-radius: 10px;
-            box-shadow: 0 0 25px rgba(0,0,0,0.35);
-        }
+    /* SECTIONS */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
 
-        h2 {
-            color: var(--accent);
-            margin-bottom: 22px;
-            border-bottom: 1px solid #444;
-            padding-bottom: 10px;
-        }
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
 
-        ul {
-            padding-left: 20px;
-        }
+    .section-desc {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
 
-        li {
-            margin-bottom: 10px;
-        }
+    /* SKILLS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+    .skill-card {
+      background: var(--bg-card);
+      padding: 25px;
+      border-radius: 14px;
+    }
 
-        .project {
-            background: #222;
-            padding: 20px;
-            border-radius: 10px;
-        }
+    .skill-card h4 {
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
 
-        .project img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 12px;
-        }
+    /* PROJECTS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
 
-        .project h3 {
-            margin-bottom: 8px;
-        }
+    .project-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+    }
 
-        .tags {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
+    .project-content {
+      padding: 25px;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    .project-content h3 {
+      margin-bottom: 10px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 26px;
-            color: var(--text-muted);
-            border-top: 1px solid #333;
-            margin-top: 60px;
-        }
+    .project-content p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
 
-        .contact p {
-            margin-bottom: 12px;
-        }
-    </style>
+    .tags {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    /* EXPERIENCE */
+    .timeline {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .timeline-item {
+      background: var(--bg-card);
+      padding: 25px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--text-muted);
+      border-top: 1px solid #222;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <!-- Profile Image -->
-    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Profile Image">
-
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Profile">
     <h1>Karthikeyan R</h1>
     <h3>Data Scientist | 4+ Years Experience</h3>
-    <p>Machine Learning • Data Analytics • Python • SQL • Business Insights</p>
-</header>
-
-<!-- Data Science Banner -->
-<img class="banner"
-     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-     alt="Data Science Banner">
-
-<section>
-    <h2>About Me</h2>
     <p>
-        I am a Data Scientist with 4 years of professional experience in developing data-driven
-        solutions, predictive models, and analytical insights. I specialize in transforming complex
-        datasets into measurable business impact through machine learning, statistical analysis,
-        and stakeholder collaboration.
+      I build data-driven solutions that turn complex datasets into
+      actionable insights using machine learning, analytics, and business understanding.
     </p>
+    <a href="#projects">View My Work</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+  <h2>About Me</h2>
+  <p class="section-desc">
+    Data Scientist with 4 years of professional experience delivering predictive models,
+    dashboards, and analytical insights that drive real business impact.
+  </p>
 </section>
 
+<!-- SKILLS -->
 <section>
-    <h2>Core Skills</h2>
-    <ul>
-        <li><strong>Programming:</strong> Python, SQL</li>
-        <li><strong>Machine Learning:</strong> Regression, Classification, Clustering, NLP</li>
-        <li><strong>Data Analysis:</strong> EDA, Feature Engineering, Statistical Modeling</li>
-        <li><strong>Visualization:</strong> Power BI, Matplotlib, Seaborn</li>
-        <li><strong>Tools:</strong> Git, Jupyter Notebook</li>
-        <li><strong>Cloud:</strong> AWS (Basic)</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Selected Projects</h2>
-
-    <div class="projects">
-
-        <div class="project">
-            <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4" alt="Churn Prediction">
-            <h3>Customer Churn Prediction</h3>
-            <p>
-                Built ML models to identify churn-prone customers and key retention drivers.
-            </p>
-            <p class="tags">Python • Scikit-learn • Pandas</p>
-        </div>
-
-        <div class="project">
-            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4" alt="Sales Forecasting">
-            <h3>Sales Forecasting & Demand Planning</h3>
-            <p>
-                Developed time-series forecasting models to improve sales predictions.
-            </p>
-            <p class="tags">ARIMA • Time Series • Python</p>
-        </div>
-
-        <div class="project">
-            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df" alt="Dashboard">
-            <h3>Executive Business Dashboard</h3>
-            <p>
-                Designed interactive dashboards for KPI monitoring and decision-making.
-            </p>
-            <p class="tags">Power BI • SQL • Data Modeling</p>
-        </div>
-
+  <h2>What I Do</h2>
+  <div class="skills">
+    <div class="skill-card">
+      <h4>Machine Learning</h4>
+      <p>Regression, classification, clustering, NLP, model evaluation</p>
     </div>
+    <div class="skill-card">
+      <h4>Data Analysis</h4>
+      <p>EDA, feature engineering, statistical analysis</p>
+    </div>
+    <div class="skill-card">
+      <h4>Visualization</h4>
+      <p>Power BI, Matplotlib, Seaborn, dashboards</p>
+    </div>
+    <div class="skill-card">
+      <h4>Engineering</h4>
+      <p>Python, SQL, Git, Jupyter, basic AWS</p>
+    </div>
+  </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Selected Projects</h2>
+  <p class="section-desc">
+    A snapshot of real-world problems I’ve solved using data.
+  </p>
+
+  <div class="projects">
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4">
+      <div class="project-content">
+        <h3>Customer Churn Prediction</h3>
+        <p>Built ML models to identify churn-prone customers and improve retention strategy.</p>
+        <div class="tags">Python • Scikit-learn • Pandas</div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4">
+      <div class="project-content">
+        <h3>Sales Forecasting</h3>
+        <p>Time-series models to forecast sales trends and optimize planning.</p>
+        <div class="tags">ARIMA • Time Series • Python</div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df">
+      <div class="project-content">
+        <h3>Executive Dashboard</h3>
+        <p>Interactive KPI dashboards for leadership decision-making.</p>
+        <div class="tags">Power BI • SQL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
 <section>
-    <h2>Professional Experience</h2>
-    <p><strong>Data Scientist</strong> — 4 Years</p>
-    <ul>
-        <li>Designed and deployed ML models for production use</li>
-        <li>Worked closely with business stakeholders</li>
-        <li>Delivered insights driving strategic decisions</li>
-    </ul>
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Data Scientist</h3>
+      <p>4 years of experience delivering ML models, analytics, and insights for business teams.</p>
+    </div>
+  </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact">
-    <h2>Contact & Profiles</h2>
-    <p>Email: <strong>your.email@example.com</strong></p>
-    <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/karthikeyan-r-614b9a233" target="_blank">
-            linkedin.com/in/karthikeyan-r
-        </a>
-    </p>
-    <p>
-        GitHub:
-        <a href="https://github.com/karthikeyanr" target="_blank">
-            github.com/karthikeyanr
-        </a>
-    </p>
+  <h2>Let’s Connect</h2>
+  <p>Email: <strong>your.email@example.com</strong></p>
+  <p>
+    LinkedIn:
+    <a href="https://www.linkedin.com/in/karthikeyan-r-614b9a233" target="_blank">
+      linkedin.com/in/karthikeyan-r
+    </a>
+  </p>
+  <p>
+    GitHub:
+    <a href="https://github.com/karthikeyanr" target="_blank">
+      github.com/karthikeyanr
+    </a>
+  </p>
 </section>
 
 <footer>
-    <p>© 2026 Karthikeyan R | Data Scientist</p>
+  © 2026 Karthikeyan R • Data Scientist
 </footer>
 
 </body>
 </html>
+
