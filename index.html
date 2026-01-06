@@ -73,12 +73,16 @@
     }
 
     .profile-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 6px solid var(--primary-brown);
-      margin-bottom: 20px;
-    }
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 6px solid var(--primary-brown);
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
     .typing {
       color: var(--accent-tan);
