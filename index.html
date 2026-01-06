@@ -73,15 +73,14 @@
     }
 
     .profile-img {
-    width: 280px;
-    height: 280px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     border: 6px solid var(--primary-brown);
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain;      /* 🔑 KEY FIX */
+    object-position: center top;
+    background-color: #2a221b; /* fallback background */
     margin-bottom: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     .typing {
