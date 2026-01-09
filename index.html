@@ -159,18 +159,23 @@
     }
 
     /* Contact */
-    .form-control, .form-select, textarea {
-      background: #0b1220;
-      border: 1px solid var(--border-color);
-      color: var(--text-light);
-    }
-    .form-control::placeholder, textarea::placeholder {
-      color: #94a3b8;
-    }
-    .form-control:focus, textarea:focus {
-      border-color: var(--primary-blue);
-      box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
-    }
+    /* Contact form inputs */
+.form-control, textarea {
+  background: #f8f9fa;        /* light gray background for inputs */
+  border: 1px solid #ced4da;  /* subtle border */
+  color: #212529;             /* dark text for readability */
+}
+
+.form-control::placeholder, textarea::placeholder {
+  color: #6c757d;             /* muted gray placeholder text */
+}
+
+.form-control:focus, textarea:focus {
+  background: #ffffff;        /* pure white when focused */
+  border-color: #0d6efd;      /* blue border highlight */
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25); /* soft blue glow */
+}
+
 
     footer {
       background: var(--footer-bg);
