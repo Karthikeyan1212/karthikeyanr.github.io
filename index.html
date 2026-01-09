@@ -1,69 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karthikeyan R | Data Analyst Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karthikeyan R | Data Scientist Portfolio</title>
 
-  <!-- CSS & LIBRARIES -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   <style>
     :root {
-      --bg-color: #0f172a;        /* Dark navy background */
+      --bg-color: #0f172a;        /* Dark navy */
       --primary-blue: #2563eb;    /* Professional blue */
-      --accent-cyan: #06b6d4;     /* Accent cyan */
+      --accent-cyan: #06b6d4;     /* Cyan accent */
       --text-light: #f8fafc;      /* Light text */
+      --muted-text: #cbd5e1;      /* Muted text */
       --card-bg: #1e293b;         /* Card background */
-      --footer-bg: #0f172a;       /* Footer background */
+      --border-color: #334155;    /* Subtle border */
+      --footer-bg: #0b1220;       /* Footer background */
     }
 
     body {
       font-family: 'Roboto Slab', serif;
       background: var(--bg-color);
       color: var(--text-light);
+      line-height: 1.6;
     }
 
-    h1,h2,h3,h4 {
+    h1, h2, h3, h4, h5 {
       font-family: 'Fira Code', monospace;
       color: var(--accent-cyan);
     }
 
+    .navbar {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: saturate(180%) blur(6px);
+    }
+    .navbar .navbar-brand, .navbar .nav-link {
+      color: var(--text-light);
+    }
+    .navbar .nav-link:hover {
+      color: var(--accent-cyan);
+    }
+
     section {
-      padding: 80px 0;
+      padding: 90px 0;
     }
 
     .section-title {
       text-align: center;
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       margin-bottom: 50px;
       position: relative;
     }
-
     .section-title::after {
       content: '';
       width: 80px;
       height: 4px;
       background: var(--primary-blue);
       position: absolute;
-      bottom: -10px;
+      bottom: -12px;
       left: 50%;
       transform: translateX(-50%);
+      border-radius: 2px;
     }
 
-    .navbar {
-      background: rgba(15,23,42,0.95);
-    }
-
-    .navbar a {
-      color: var(--text-light);
-      font-family: 'Fira Code', monospace;
-    }
-
-    /* HOME */
+    /* Home */
     #home {
       min-height: 100vh;
       display: flex;
@@ -71,7 +76,6 @@
       justify-content: center;
       text-align: center;
     }
-
     .profile-img {
       width: 280px;
       height: 280px;
@@ -79,18 +83,38 @@
       border: 6px solid var(--primary-blue);
       object-fit: cover;
       object-position: center 35%;
-      transform: scale(0.92);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
     }
-
+    .headline {
+      font-size: 1.1rem;
+      color: var(--muted-text);
+      margin-top: 10px;
+    }
     .typing {
       color: var(--accent-cyan);
       font-family: 'Fira Code', monospace;
-      font-size: 1.2rem;
+      font-size: 1rem;
+      margin-top: 6px;
+    }
+
+    .btn-custom {
+      background: var(--primary-blue);
+      color: var(--text-light);
+      border-radius: 28px;
+      padding: 10px 22px;
+      margin: 8px;
+      border: 1px solid transparent;
+      transition: all 0.25s ease;
+    }
+    .btn-custom:hover {
+      background: var(--accent-cyan);
+      color: #0f172a;
+      transform: translateY(-1px);
     }
 
     .social-links a {
-      font-size: 1.8rem;
-      margin: 0 15px;
+      font-size: 1.4rem;
+      margin: 0 10px;
       color: var(--text-light);
       transition: 0.3s;
     }
@@ -98,132 +122,558 @@
       color: var(--accent-cyan);
     }
 
-    .btn-custom {
-      background: var(--primary-blue);
-      color: var(--text-light);
-      border-radius: 30px;
-      padding: 10px 25px;
-      margin: 10px;
-      transition: 0.3s;
-    }
-    .btn-custom:hover {
-      background: var(--accent-cyan);
-      color: #0f172a;
-    }
-
+    /* Cards */
     .card-custom {
       background: var(--card-bg);
-      padding: 25px;
-      border-radius: 15px;
-      border: 1px solid var(--primary-blue);
-      margin-bottom: 25px;
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 24px;
+      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.35);
+    }
+
+    /* Skills grid */
+    .skill-item, .service-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      font-weight: 500;
+    }
+    .skill-item i, .service-item i {
+      color: var(--accent-cyan);
+      font-size: 1.3rem;
+    }
+
+    /* Experience bullets */
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .bullet-list li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 26px;
+      color: var(--muted-text);
+    }
+    .bullet-list li::before {
+      content: "\f058";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: var(--primary-blue);
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+
+    /* Project cards */
+    .project-card h4 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .project-card h4 i {
+      color: var(--accent-cyan);
+    }
+
+    /* Modal */
+    .modal-content {
+      background: #0f172a;
+      color: var(--text-light);
+      border: 1px solid var(--border-color);
+    }
+    .modal-header {
+      border-bottom: 1px solid var(--border-color);
+    }
+    .modal-footer {
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Contact */
+    .form-control, .form-select, textarea {
+      background: #0b1220;
+      border: 1px solid var(--border-color);
+      color: var(--text-light);
+    }
+    .form-control::placeholder, textarea::placeholder {
+      color: #94a3b8;
+    }
+    .form-control:focus, textarea:focus {
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
     }
 
     footer {
       background: var(--footer-bg);
-      padding: 20px;
+      padding: 22px;
       text-align: center;
       font-family: 'Fira Code', monospace;
+      color: var(--muted-text);
+      border-top: 1px solid var(--border-color);
     }
   </style>
 </head>
 
 <body>
-
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">KARTHIKEYAN R</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse show" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- HOME -->
-<section id="home">
-  <div>
-    <img src="images/profile3.jpg" class="profile-img" alt="Karthikeyan R"> 
-    <h1>Hello, I'm <span style="color:var(--accent-cyan)">Karthikeyan R</span></h1>
-    <h3>Data Scientist</h3>
-    <p class="typing">Healthcare • Banking • Retail Analytics</p>
-
-    <div class="mt-4">
-      <a href="Resume/Karthikeyan_Resume.pdf" class="btn btn-custom" download>Download Resume</a>
-      <a href="#services" class="btn btn-custom">View My Services</a>
-    </div>
-
-    <div class="social-links mt-3">
-      <a href="https://www.linkedin.com/in/karthikeyan-r-614b9a233/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:karthikeyanramu12@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <h2 class="section-title">About Me</h2>
-    <p class="text-center">
-      Data Analyst with nearly <strong>4 years of experience</strong> across
-      <strong>healthcare analytics, banking, and retail</strong>.
-      I thrive in dynamic environments where I can apply my analytical expertise,
-      continuously expand my knowledge, and deliver impactful insights.
-    </p>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <h2 class="section-title">Skills</h2>
-    <div class="row text-center">
-      <div class="col-md-4 card-custom">SQL, Python, SAS</div>
-      <div class="col-md-4 card-custom">Tableau, Power BI</div>
-      <div class="col-md-4 card-custom">Azure Databricks, Domino</div>
-      <div class="col-md-4 card-custom">Power Automate, Purview</div>
-      <div class="col-md-4 card-custom">Statistical Analysis</div>
-      <div class="col-md-4 card-custom">Leadership & Project Planning</div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <h2 class="section-title">Services</h2>
-    <div class="row text-center">
-      <div class="col-md-4 card-custom">
-        <h4>Data Analytics Consulting</h4>
-        <p>Helping businesses unlock insights from data for smarter decisions.</p>
-      </div>
-      <div class="col-md-4 card-custom">
-        <h4>Visualization & Reporting</h4>
-        <p>Creating interactive dashboards and automated reports.</p>
-      </div>
-      <div class="col-md-4 card-custom">
-        <h4>Data Governance</h4>
-        <p>Implementing frameworks for compliance, security, and quality.</p>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">KARTHIKEYAN R</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+      </button>
+      <div class="collapse navbar-collapse show" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <h2 class="section-title">Experience</h2>
-    <div class="card-custom">
-      <h4>Data Analyst — MuSigma Business
+  <!-- Home -->
+  <section id="home">
+    <div class="container text-center" data-aos="fade-up">
+      <img src="images/profile3.jpg" class="profile-img mb-4" alt="Karthikeyan R" />
+      <h1>Data Scientist | ML & Product Analytics | Decision Systems</h1>
+      <p class="headline">Building decision systems that scale across industries</p>
+      <p class="typing">Healthcare • Banking • Retail • Oil & Gas • Technology</p>
+
+      <div class="mt-4">
+        <a href="resume/KarthikeyanR_Resume.pdf" class="btn btn-custom" download>
+          <i class="fas fa-file-arrow-down me-2"></i>Download Resume
+        </a>
+        <a href="#services" class="btn btn-custom">
+          <i class="fas fa-briefcase me-2"></i>View My Services
+        </a>
+      </div>
+
+      <div class="social-links mt-3">
+        <a href="https://www.linkedin.com/in/karthikeyan-r-614b9a233/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:karthikeyanramu12@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About me</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card-custom" data-aos="fade-up">
+            <p>
+              Data Scientist with 4 years of experience across healthcare, banking, and retail analytics. I design scalable machine learning solutions, automate analytical workflows, and translate complex data into actionable business insights. I align technical execution with strategic goals to deliver measurable outcomes—driving data‑driven innovation with AI, advanced analytics, and robust decision systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom text-center" data-aos="fade-up">
+            <h5><i class="fab fa-python me-2"></i>Programming & Tools</h5>
+            <p class="mt-2 text-muted">Python, SQL, R, SAS, Spark, Azure Databricks, TensorFlow, PyTorch, Scikit‑learn, Power BI, Tableau, Domino Scheduler, Power Automate</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom text-center" data-aos="fade-up" data-aos-delay="100">
+            <h5><i class="fas fa-brain me-2"></i>Machine Learning & AI</h5>
+            <p class="mt-2 text-muted">Predictive Modeling, NLP, Deep Learning, Feature Engineering, Model Deployment, A/B Testing, Time Series Forecasting</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom text-center" data-aos="fade-up" data-aos-delay="200">
+            <h5><i class="fas fa-cloud me-2"></i>Data Science & Cloud Platforms</h5>
+            <p class="mt-2 text-muted">Azure ML, Databricks, Microsoft Purview, Azure Data Factory, Microsoft Power Platform</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom text-center" data-aos="fade-up" data-aos-delay="300">
+            <h5><i class="fas fa-shield-alt me-2"></i>Data Management & Governance</h5>
+            <p class="mt-2 text-muted">Data Pipelines, Metadata Management, Data Quality Frameworks, MLOps, Data Governance</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom text-center" data-aos="fade-up" data-aos-delay="400">
+            <h5><i class="fas fa-chart-line me-2"></i>Business Impact Areas</h5>
+            <p class="mt-2 text-muted">KPI Enhancement, Product Analysis, Healthcare Perspectives, Risk Assessment, Market Planning</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom text-center" data-aos="fade-up" data-aos-delay="500">
+            <h5><i class="fas fa-people-group me-2"></i>Soft Skills</h5>
+            <p class="mt-2 text-muted">Problem Solving, Cross‑Functional Collaboration, Business Storytelling, Project Leadership</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <p class="text-center text-muted mb-4">Passionate about helping students and professionals grow with guidance rooted in real‑world experience and strong people skills.</p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom service-item" data-aos="fade-up">
+            <i class="fas fa-file-chart-column"></i> Data Reporting
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom service-item" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-diagram-project"></i> Project Management
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom service-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-chart-pie"></i> Business Analytics
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom service-item" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-cloud"></i> Cloud Management
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom service-item" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-keyboard"></i> Technical Writing
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom service-item" data-aos="fade-up" data-aos-delay="500">
+            <i class="fas fa-user-graduate"></i> Career Development Coaching
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom service-item" data-aos="fade-up" data-aos-delay="600">
+            <i class="fas fa-briefcase"></i> Business Consulting
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom service-item" data-aos="fade-up" data-aos-delay="700">
+            <i class="fas fa-chalkboard-teacher"></i> Educational Consulting
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-custom service-item" data-aos="fade-up" data-aos-delay="800">
+            <i class="fas fa-leaf"></i> Environmental Consulting
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="card-custom" data-aos="fade-up">
+        <h4>Data Scientist — Mu Sigma Business Solutions Pvt. Ltd.</h4>
+        <p class="text-muted"><em>Jan 2022 — Present</em></p>
+        <p class="mb-3">
+          We are a pure play decision sciences company. The big D is decisions, not data. We believe the purpose of AI, machine learning, and computer vision is to improve decision making and intelligent automation. In a world of rising complexity, a new approach to problem solving is needed to scale and systematize better decision‑making.
+        </p>
+        <h5 class="mt-3"><i class="fas fa-truck-fast me-2"></i>Work that shipped</h5>
+        <ul class="bullet-list mt-2">
+          <li>Shaped and delivered AI‑enabled analytics platforms providing real‑time visibility into complex, multi‑country operations—giving leadership a single source of truth across products, regions, and markets.</li>
+          <li>Applied ML and advanced analytics to classify operational status, surface early risks, and support proactive decision‑making in high‑stakes, regulated environments.</li>
+          <li>Built scalable cloud data pipelines for reliable processing of large, heterogeneous datasets while maintaining performance and integrity.</li>
+          <li>Designed executive‑facing, self‑service dashboards that translate model outputs into clear business narratives—accelerating alignment and action.</li>
+          <li>Automated analytical workflows and enterprise data synchronization—reducing manual intervention and improving operational efficiency.</li>
+          <li>Embedded governance and data quality frameworks to ensure traceability, lineage, and compliance—without slowing innovation.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+
+      <!-- Project 1 -->
+      <div class="card-custom project-card" data-aos="fade-up">
+        <h4><i class="fas fa-pills"></i> Pharmaceutical Medical Activity Monitoring & Automation Platform</h4>
+        <p class="text-muted">AI‑powered global medical launch monitoring for a Fortune 500 pharma client.</p>
+        <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#project1Modal">
+          <i class="fas fa-eye me-2"></i>View Details
+        </button>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card-custom project-card" data-aos="fade-up" data-aos-delay="100">
+        <h4><i class="fas fa-shield-alt"></i> Data Governance & Quality Initiative with Microsoft Purview</h4>
+        <p class="text-muted">AI‑driven governance framework ensuring integrity across banking and logistics.</p>
+        <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#project2Modal">
+          <i class="fas fa-eye me-2"></i>View Details
+        </button>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card-custom project-card" data-aos="fade-up" data-aos-delay="200">
+        <h4><i class="fas fa-robot"></i> AI Knowledge Assistant for Enterprise Insights</h4>
+        <p class="text-muted">LLM‑powered assistant using OpenAI API, LangChain, and Azure Cognitive Search.</p>
+        <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#project3Modal">
+          <i class="fas fa-eye me-2"></i>View Details
+        </button>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="card-custom project-card" data-aos="fade-up" data-aos-delay="300">
+        <h4><i class="fas fa-chart-bar"></i> Advanced Data Insights Platforms</h4>
+        <p class="text-muted">Led design and refinement of analytical artifacts for strategic decision‑making.</p>
+        <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#project4Modal">
+          <i class="fas fa-eye me-2"></i>View Details
+        </button>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="card-custom project-card" data-aos="fade-up" data-aos-delay="400">
+        <h4><i class="fas fa-object-group"></i> User‑friendly Wireframe Development with Figma</h4>
+        <p class="text-muted">Designed intuitive wireframes to enhance user navigation and satisfaction.</p>
+        <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#project5Modal">
+          <i class="fas fa-eye me-2"></i>View Details
+        </button>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="card-custom project-card" data-aos="fade-up" data-aos-delay="500">
+        <h4><i class="fas fa-bicycle"></i> Smart E‑Cycle for Sustainable Urban Mobility</h4>
+        <p class="text-muted">Battery‑powered e‑cycle prototype for affordable, sustainable transport.</p>
+        <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#project6Modal">
+          <i class="fas fa-eye me-2"></i>View Details
+        </button>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="card-custom project-card" data-aos="fade-up" data-aos-delay="600">
+        <h4><i class="fas fa-seedling"></i> IoT‑Enabled Smart Irrigation & Water Management</h4>
+        <p class="text-muted">Automated irrigation system optimizing water usage via sensor data.</p>
+        <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#project7Modal">
+          <i class="fas fa-eye me-2"></i>View Details
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="card-custom text-center" data-aos="fade-up">
+        <h4><i class="fas fa-graduation-cap me-2"></i>Bachelor of Engineering — Electrical & Electronics Engineering</h4>
+        <p class="text-muted mb-1">Sri Sairam Engineering College — Chennai</p>
+        <p class="text-muted">2018 — 2022 • CGPA: 9.0</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card-custom" data-aos="fade-up">
+            <div class="row">
+              <div class="col-md-6">
+                <p><i class="fas fa-phone me-2"></i>+91 93843 42846</p>
+                <p><i class="fas fa-envelope me-2"></i>karthikeyanramu12@gmail.com</p>
+                <p><i class="fab fa-linkedin me-2"></i><a href="https://www.linkedin.com/in/karthikeyan-r-614b9a233/" target="_blank" style="color: var(--accent-cyan); text-decoration: none;">LinkedIn Profile</a></p>
+                <p><i class="fas fa-location-dot me-2"></i>Bangalore, India</p>
+              </div>
+              <div class="col-md-6">
+                <p class="text-muted">For hiring, services, or collaborations—send a message:</p>
+                <!-- Formspree form: replace YOUR_FORM_ID -->
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="row g-3">
+                  <div class="col-12">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required />
+                  </div>
+                  <div class="col-12">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required />
+                  </div>
+                  <div class="col-12">
+                    <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-custom w-100">
+                      <i class="fas fa-paper-plane me-2"></i>Submit
+                    </button>
+                  </div>
+                </form>
+                <small class="text-muted d-block mt-2">You’ll receive responses via email or in your Formspree dashboard.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Karthikeyan R — Data Scientist
+  </footer>
+
+  <!-- Project Modals -->
+
+  <!-- Project 1 Modal -->
+  <div class="modal fade" id="project1Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-pills me-2"></i>Pharmaceutical Medical Activity Monitoring & Automation Platform</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="bullet-list">
+            <li>Developed global medical launch monitoring powered by AI—real‑time tracking across therapeutic indications.</li>
+            <li>Streamlined workflows via Domino Scheduler & Python—40% efficiency gain, 60% reduction in manual effort.</li>
+            <li>Predictive models anticipated delays & resource utilization—improved launch success rates by 20%.</li>
+            <li>Linked pipelines to SharePoint using Power Automate—50% better data accessibility & synchronization.</li>
+            <li>Interactive Tableau dashboards integrated ML outputs—real‑time, data‑informed decision‑making across regions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2 Modal -->
+  <div class="modal fade" id="project2Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-shield-alt me-2"></i>Data Governance & Quality Initiative with Microsoft Purview</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="bullet-list">
+            <li>Built AI‑driven governance framework with Microsoft Purview—enterprise integrity across banking & logistics.</li>
+            <li>Automated anomaly detection & data quality scoring in Azure Databricks—35% accuracy boost, 50% faster validation.</li>
+            <li>Partnered with compliance teams to meet GDPR & Basel III—reduced regulatory risk, standardized metadata across 5 units.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 3 Modal -->
+  <div class="modal fade" id="project3Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-robot me-2"></i>AI Knowledge Assistant for Enterprise Insights</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="bullet-list">
+            <li>LLM‑powered assistant using OpenAI API, LangChain, and Azure Cognitive Search—contextual insights from structured & unstructured data.</li>
+            <li>Refined GPT‑based model for domain terminology—natural language access to compliance, sales, and medical launch insights.</li>
+            <li>Achieved 70% reduction in query response time—boosted internal decision support across business functions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 4 Modal -->
+  <div class="modal fade" id="project4Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-chart-bar me-2"></i>Advanced Data Insights Platforms</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="bullet-list">
+            <li>Led team to design & refine analytical artifacts for well‑defined business problems—actionable insights for strategy.</li>
+            <li>Streamlined data processes—35% reduction in processing time, improved solution effectiveness.</li>
+            <li>Improved accuracy of business recommendations by 30%—more data‑driven, impactful decisions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 5 Modal -->
+  <div class="modal fade" id="project5Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-object-group me-2"></i>User‑friendly Wireframe Development with Figma</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="bullet-list">
+            <li>Designed and developed intuitive wireframes—enhanced navigation, interaction, and overall user satisfaction.</li>
+            <li>Aligned UX flows with stakeholder needs—clear information hierarchy and accessible design patterns.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 6 Modal -->
+  <div class="modal fade" id="project6Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-bicycle me-2"></i>Smart E‑Cycle for Sustainable Urban Mobility</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="bullet-list">
+            <li>Engineered lightweight, energy‑efficient e‑cycle—top speed 25 km/h, charging time 3–4 hours.</li>
+            <li>Optimized components for cost, durability, and environmental impact—more accessible than traditional e‑bikes.</li>
+            <li>Evaluated energy consumption & mobility efficiency—reduced carbon emissions and fuel dependence.</li>
+            <li>Inclusive design for diverse urban populations—usability and safety prioritized.</li>
+            <li><strong>Outcome:</strong> Demonstrated a cost‑effective, sustainable alternative for short‑distance urban mobility.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 7 Modal -->
+  <div class="modal fade" id="project7Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-seedling me-2"></i>IoT‑Enabled Smart Irrigation & Water Management</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="bullet-list">
+            <li>Developed sensor‑driven system to monitor soil moisture & temperature—continuous, real‑time data.</li>
+            <li>Implemented rule‑based automation—dynamic irrigation control based on environmental conditions.</li>
+            <li>Reduced water consumption by up to 30%—lowered manual monitoring by 40%.</li>
+            <li>Improved irrigation efficiency and resource utilization—data‑driven decision logic.</li>
+            <li><strong>Outcome:</strong> Enabled smarter water management with measurable efficiency gains.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 700, offset: 80 });
+  </script>
+</body>
+</html>
